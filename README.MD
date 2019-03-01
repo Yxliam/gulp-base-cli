@@ -1,6 +1,8 @@
 ## 基于gulp搭建的前端自动化构建
 
-**快速构建前端项目框架。比如运营活动页，官网类，简单移动端项目，小demo测试等**
+**快速构建前端项目框架。比如官网类小demo测试等**
+**如果是移动端需要使用基础的basic-m.css，和base.scss还有公用头使用header-m.html模板**
+**可以随便根据自己的要求去进行修改配置**
 
 ## 项目启动
 ```
@@ -38,16 +40,15 @@
 └── webpack.config.js # webpack配置文件
 ```
 
-## 项目约定
+## 项目配置
 1、 使用严格的 eslint 规范 [文档链接](https://github.com/airbnb/javascript)
 * 如果不想使用eslint，可以gulpfile文件中去掉该任务
 
 2、使用scss预处理
 * 可以根据个人喜好，去配置不同的预处理工具
 
-3、static文件夹
-* 一级目录中static文件夹，可以存放不需要编译的文件内容，比如一些插件，图片，字体文件等
-* 每次npm run dev or build 都会把static文件夹下的内容，打包到dist/static里
+3、es6转es5
+
 
 
 ## 代理模式
@@ -58,7 +59,7 @@
  middleware: [
   proxy.proxyPrase(
     {
-      target: 'http://v3.wufazhuce.com:8000/api',
+      target: 'http://www.yxlblog.com/api',
       route: '/api'
     }
   )
@@ -79,10 +80,8 @@ config/index.js文件
 useWebpack: false // 是否启用webpack
 ```
 
-## 小生后话
-* 此前端自动化构建框架，只是为了简单方便
 
-* 可以随便根据自己的要求去进行修改配置
+
 
 
 
