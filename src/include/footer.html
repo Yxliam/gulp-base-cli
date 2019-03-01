@@ -1,0 +1,9 @@
+<script src="../static/js/jquery.js"></script>
+@@if (context.scripts && context.scripts.length > 0){
+        @@for (var j = 0; j < (context.scripts.length); j++) {
+                <script src="`+context.scripts[j]+`"></script>
+        }
+}
+
+</body>
+</html>

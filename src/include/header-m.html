@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//3gimg.qq.com" />
+    <link rel="dns-prefetch" href="//zxpic.gtimg.com" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no" />
+    <meta name="MobileOptimized" content="320" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="copyright" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="x5-page-mode" content="no-title" />
+    <link rel="apple-touch-icon-precomposed" href="" />
+    <title>@@title</title>
+    <link rel="stylesheet" href="../css/common/basic.css">
+    <script>
+        !(function(win, doc) {
+            function setFontSize() {
+                var baseFontSize = 100;
+                var baseWidth = 320;
+                var clientWidth = document.documentElement.clientWidth || window.innerWidth;
+                var innerWidth = Math.max(Math.min(clientWidth, 480), 320);
+
+                var rem = 100;
+
+                if (innerWidth > 362 && innerWidth <= 375) {
+                    rem = Math.floor(innerWidth / baseWidth * baseFontSize * 0.9);
+                }
+
+                if (innerWidth > 375) {
+                    rem = Math.floor(innerWidth / baseWidth * baseFontSize * 0.84);
+                }
+
+                window.__baseREM = rem;
+                document.querySelector('html').style.fontSize = rem + 'px';
+            }
+            var evt = 'onorientationchange' in win ? 'orientationchange' : 'resize';
+            var timer = null;
+            win.addEventListener(evt, function() {
+                clearTimeout(timer);
+                timer = setTimeout(setFontSize, 300);
+            }, false);
+            win.addEventListener("pageshow", function(e) {
+                if (e.persisted) {
+                    clearTimeout(timer);
+                    timer = setTimeout(setFontSize, 300);
+                }
+            }, false);
+            setFontSize();
+        }(window, document));
+    </script>
+    <link rel="stylesheet" href="../static/css/basic.css">
+@@if (context.links && context.links.length > 0){
+    @@for (var i = 0; i < (context.links.length); i++) {
+        <link rel="stylesheet" href="`+context.links[i]+`">
+    }
+}
+</head>
+<body>

@@ -1,0 +1,18 @@
+
+@@include('header.html',{
+  "title":"首页",
+  "links":["../static/css/index.css"]
+})
+<!-- 公用头部 多个样式表，就在links数组后添加-->
+
+<!-- 主体 -->
+<div class="main-wrapper">
+      index
+  <div>
+    <img width="200" height="200" src="../static/images/bj.jpg" alt="">
+  </div>
+</div>
+<!-- 公用尾部 多个js就在scripts数组后添加 -->
+@@include('footer.html',{
+  "scripts":["../static/js/main.js"]
+})

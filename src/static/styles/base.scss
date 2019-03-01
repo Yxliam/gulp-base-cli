@@ -1,0 +1,46 @@
+body{
+    min-width:1200px;
+}
+
+@mixin one-ellips{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin more-ellips($num:2){
+    overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: $num;
+-webkit-box-orient: vertical;
+}
+
+@mixin floatFun(){
+    content: '.';
+    display: block;
+    visibility: hidden;
+    clear: both;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    zoom: 1;
+}
+@mixin nowrap(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@mixin box(){
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+@mixin transite($duration:0.35s){
+	transition: all $duration;
+	-moz-transition: all $duration;
+	-webkit-transition: all $duration;
+	-o-transition: all $duration;
+}
+
+
