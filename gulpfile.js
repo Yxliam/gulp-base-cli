@@ -92,7 +92,7 @@ gulp.task('styles', () => {
     .pipe(plumber(onError))
     .pipe(sass())
     .pipe(gulpif(condition, cleanCSS({debug: true})))
-    .pipe(postcss('./.postcssrc.js'))
+    // .pipe(postcss('./.postcssrc.js'))
     .pipe(gulp.dest(config.build.styles))
 })
 
