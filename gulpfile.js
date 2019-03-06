@@ -147,6 +147,7 @@ gulp.task('watch', () => {
   gulp.watch(config.dev.styles, ['styles']).on('change', reload)
   gulp.watch(config.dev.script, ['script']).on('change', reload)
   gulp.watch(config.dev.images, ['images']).on('change', reload)
+  gulp.watch(config.dev.static, ['static']).on('change', reload)
 })
 
 gulp.task('zip', () => {
@@ -157,7 +158,7 @@ gulp.task('zip', () => {
 })
 
 gulp.task('server', () => {
-  const task = ['html', 'styles', 'script','images']
+  const task = ['html', 'styles', 'script','images','static']
   cbTask(task).then(() => {
     browserSync.init(config.server)
     console.log(chalk.cyan('  服务器启动^-^.\n'))
@@ -166,7 +167,7 @@ gulp.task('server', () => {
 })
 
 gulp.task('build', () => {
-  const task = ['html', 'styles', 'script', 'images']
+  const task = ['html', 'styles', 'script', 'images','static']
   cbTask(task).then(() => {
     console.log(chalk.cyan('  编译完成^-^.\n'))
 
