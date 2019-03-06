@@ -65,6 +65,7 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "babel-polyfill": "^6.26.0"
   }
 }
