@@ -56,14 +56,11 @@
 
 **例子如下**
 ``` javascript
- middleware: [
-  proxy.proxyPrase(
-    {
-      target: 'http://www.yxlblog.com/api',
-      route: '/api'
-    }
-  )
-]
+ middleware: proxyMiddleware('/api', {
+      target: 'http://xxx',
+      changeOrigin: true,
+      logLevel: 'debug',
+  })
 ```
 
 ## 使用Eslint 
