@@ -1,17 +1,14 @@
-const proxy = require('./poxy')
+proxyMiddleware = require('http-proxy-middleware');
 
 module.exports = {
   // 服务器
   server: {
     baseDir: './dist',
-    middleware: [
-      // proxy.proxyPrase(
-      //   {
-      //     target: 'http://v3.wufazhuce.com:8000/api',
-      //     route: '/api'
-      //   }
-      // )
-    ]
+//     middleware: proxyMiddleware('/api', {
+//       target: 'http://xxx',
+//       changeOrigin: true,
+//       logLevel: 'debug',
+//   })
   },
   // 是否开启多端同步
   ghostMode: {
